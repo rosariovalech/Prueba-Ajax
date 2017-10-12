@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Companies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+   <%= render 'contenido_index', companies: @companies %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Company', new_company_path %>
+
+<br>
+
+<form>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label for="title">Nombre</label>
+  <input type="text" name="title">
+  <label for="content">Reclamo</label>
+  <textarea name="content" ></textarea>
+  <button name="enviar">Enviar</button>
+</form>
